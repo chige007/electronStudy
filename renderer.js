@@ -4,3 +4,12 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+
+const {ipcRenderer} = require('electron')
+
+window.addEventListener('DOMContentLoaded', () => {
+    ipcRenderer.on('reply', (event, arg) => {
+        document.getElementById('reply').innerHTML = arg;
+    })
+    ipcRenderer.send('message', 'hello from renderer');
+})
