@@ -7,7 +7,7 @@
     "start": "nodemon --watch main.js --exec 'electron .'",
     "dist": "electron-builder"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/chige007/electronStudy.git",
   "keywords": [
     "Electron",
     "quick",
@@ -28,8 +28,8 @@
       "category": "public.app-category.developer-tools"
     },
     "dmg": {
-      "background": "build/dmgBg.jpg",
-      "icon": "build/dmgIcon3.icns",
+      "background": "build/background.jpg",
+      "icon": "build/icon.icns",
       "iconSize": 100,
       "contents": [
         {
@@ -44,7 +44,6 @@
           "type": "file"
         }
       ],
-      "artifactName": "electronStudy",
       "window": {
         "width": 500,
         "height": 400
@@ -58,7 +57,7 @@
     },
     "win": {
       "target": "squirrel",
-      "icon": "build/winIco.ico"
+      "icon": "build/icon.ico"
     }
   },
   "dependencies": {
