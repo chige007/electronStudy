@@ -1,10 +1,11 @@
 {
-  "name": "electron-quick-start",
+  "name": "electronstudy",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --watch main.js --exec 'electron .'"
+    "start": "nodemon --watch main.js --exec 'electron .'",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -18,6 +19,49 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^7.1.7",
+    "electron-builder": "^21.2.0",
     "nodemon": "^2.0.2"
+  },
+  "build": {
+    "appId": "electronStudy",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "dmg": {
+      "background": "build/dmgBg.jpg",
+      "icon": "build/dmgIcon3.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 380,
+          "y": 200,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 200,
+          "type": "file"
+        }
+      ],
+      "artifactName": "electronStudy",
+      "window": {
+        "width": 500,
+        "height": 400
+      }
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/winIco.ico"
+    }
+  },
+  "dependencies": {
+    "electron-store": "^5.1.0"
   }
 }

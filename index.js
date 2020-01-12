@@ -11,5 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
     ipcRenderer.on('reply', (event, arg) => {
         document.getElementById('reply').innerHTML = arg;
     })
-    ipcRenderer.send('message', 'hello from renderer');
+    ipcRenderer.send('message', 'hello from index');
+    
+    document.getElementById('openBtn').addEventListener('click', () => {
+        ipcRenderer.send('openSecondWin');
+    })
 })
